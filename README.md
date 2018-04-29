@@ -41,7 +41,7 @@ fill out the data required for applying for a loan from Karma.
 
 ### [Andorid appliction](https://github.com/LexLeontiev/karmaauth)👈
 
-### [Server application](https://github.com/MaximZemskov/karma-auth)👈
+### [Server application (Karma Auth Service)](https://github.com/MaximZemskov/karma-auth)👈
 
 ### Web application build with:
 
