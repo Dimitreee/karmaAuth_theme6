@@ -32,7 +32,7 @@ fill out the data required for applying for a loan from Karma.
 * [ ] Add several documents types to autocomplete list
 
 ## Interaction scheme
-<img src="images/system.png" alt="preview 1" width="auto" height="auto">
+<img src="images/system.png" alt="preview 1" width="auto" height="300">
 
 ## Screenshots
 <img src="images/appScreen1.png" alt="preview 1" width="200" height="auto"><img src="images/appScreen2.png" alt="preview 1" width="200" height="auto"><img src="images/appScreen3.png" alt="preview 1" width="200" height="auto">
