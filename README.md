@@ -30,9 +30,7 @@ fill out the data required for applying for a loan from Karma.
 
 ###Screenshots
 
-<img src="images/appScreen1.png" alt="preview 1" width="300" height="500">
-<img src="images/appScreen2.png" alt="preview 1" width="300" height="500">
-<img src="images/appScreen3.png" alt="preview 1" width="300" height="500">
+<img src="images/appScreen1.png" alt="preview 1" width="300" height="auto"><img src="images/appScreen2.png" alt="preview 1" width="300" height="auto"><img src="images/appScreen3.png" alt="preview 1" width="auto" height="500">
 
 
 ---
