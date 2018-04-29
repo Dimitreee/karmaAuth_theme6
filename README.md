@@ -1,6 +1,6 @@
-#Autocomplete the user profile form from the document's photo
+# Autocomplete the user profile form from the document's photo
 
-#####Assumption:
+##### Assumption:
 Continuing the theme of the development of Karma as a platform:
 we want to provide network members with the organization of additional services.
 So, for example, one of the infrastructural elements of the system is a
@@ -12,7 +12,7 @@ _One of the needs of such a service is a simple and quick way to fill out all fo
 associated with the client's personalization._ For example,
 on the site of such a company.
 
-#####Idea:
+##### Idea:
 The user photographs the document at registration, and the profile of
 the Karma wallet user is automatically populated from the fields of the identity document,
 without needing to score the fields with his hands.
@@ -20,7 +20,7 @@ And you can also scan the property registration
 certificate / driver's license and other documents and
 fill out the data required for applying for a loan from Karma.
 
-###Objectives
+### Objectives
 
 * [ ] Code refactor
 * [ ] Use *CV library on server/client side to crop *white-space\* on image
@@ -28,7 +28,7 @@ fill out the data required for applying for a loan from Karma.
 * [ ] Research on image optimization algorithms to improve the quality of allocated blocks
 * [ ] Add several documents types to autocomplete list
 
-###Screenshots
+### Screenshots
 
 <img src="images/appScreen1.png" alt="preview 1" width="300" height="auto"><img src="images/appScreen2.png" alt="preview 1" width="300" height="auto"><img src="images/appScreen3.png" alt="preview 1" width="auto" height="500">
 
