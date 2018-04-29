@@ -29,7 +29,7 @@ module.exports = {
     // (jsnext:main directs not usually distributable es6 format, but es6 sources)
     mainFields: ['module', 'browser', 'main'],
     alias: {
-      'app': path.resolve(__dirname, 'src/app/')
+      app: path.resolve(__dirname, 'src/app/')
     }
   },
   module: {
@@ -114,7 +114,15 @@ module.exports = {
     historyApiFallback: {
       disableDotRule: true
     },
-    stats: 'minimal'
+    stats: 'minimal',
+    proxy: {
+      '/api': {
+        target: 'http://37.143.14.239:8000'
+      }
+    }
+  },
+  stats: {
+    warnings: false
   },
   devtool: 'cheap-module-eval-source-map',
   node: {

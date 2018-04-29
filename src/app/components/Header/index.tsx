@@ -1,34 +1,14 @@
-import * as React from 'react';
-import { TodoTextInput } from 'app/components/TodoTextInput';
-import { TodoModel } from 'app/models/TodoModel';
+import * as React from 'React';
+import AppBar from 'material-ui/AppBar';
 
-export interface HeaderProps {
-  addTodo: (todo: Partial<TodoModel>) => any;
-}
+import { HeaderWrapper } from 'app/components/Header/componenets';
 
-export interface HeaderState {
-  /* empty */
-}
-
-export class Header extends React.Component<HeaderProps, HeaderState> {
-  private handleSave = (text: string) => {
-    if (text.length) {
-      this.props.addTodo({ text });
-    }
-  };
-
-  render() {
-    return (
-      <header>
-        <h1>Todos</h1>
-        <TodoTextInput
-          newTodo
-          onSave={this.handleSave}
-          placeholder="What needs to be done?"
-        />
-      </header>
-    );
-  }
-}
-
-export default Header;
+export const Header = () => (
+  <HeaderWrapper>
+    <AppBar
+      showMenuIconButton={false}
+      title="Karma Auth Service"
+      iconClassNameLeft={undefined}
+    />
+  </HeaderWrapper>
+);

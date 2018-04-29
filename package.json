@@ -1,14 +1,12 @@
 {
-  "name": "typescript-react-mobx-boilerplate",
+  "name": "karma-auth",
   "version": "1.0.0",
   "private": true,
-  "description": "A frontend boilerplate with React, MobX and Typescript",
+  "description": "Karma Hackathon project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --mode development --hot --progress --colors --port 3000 --open",
-    "build": "webpack -p --progress --colors",
-    "prettier": "prettier --write \"src/**/*.{ts,tsx,css}\""
+    "build": "webpack -p --progress --colors"
   },
   "license": "MIT",
   "devDependencies": {
@@ -46,11 +44,18 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
+    "image-promise": "^5.0.1",
+    "material-ui": "^0.20.0",
     "mobx": "^3.6.1",
     "mobx-react": "^4.4.2",
     "mobx-react-router": "^4.0.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-router": "^4.2.0"
+    "react-file-input-previews-base64": "^1.0.6",
+    "react-image-zoom": "^0.7.0",
+    "react-router": "^4.2.0",
+    "sanitize.css": "^5.0.0",
+    "styled-components": "^3.2.6",
+    "tesseract.js": "^1.0.10"
   }
 }
