@@ -1,4 +1,5 @@
-# Autocomplete the user profile form from the document's photo
+# Karma Auth App (Web-client😎)
+> Autocomplete the user profile form from the document's photo
 
 ##### Assumption:
 Continuing the theme of the development of Karma as a platform:
@@ -20,7 +21,9 @@ And you can also scan the property registration
 certificate / driver's license and other documents and
 fill out the data required for applying for a loan from Karma.
 
-### Objectives
+> [Reference photo for checking the application](https://drive.google.com/drive/folders/1wbArlgHHJiRz9vYOU0CugtXWScsi8lKU) 👈
+
+## Objectives
 
 * [ ] Code refactor
 * [ ] Use *CV library on server/client side to crop *white-space\* on image
@@ -28,21 +31,19 @@ fill out the data required for applying for a loan from Karma.
 * [ ] Research on image optimization algorithms to improve the quality of allocated blocks
 * [ ] Add several documents types to autocomplete list
 
-### Screenshots
+## Screenshots
 
 <img src="images/appScreen1.png" alt="preview 1" width="300" height="auto"><img src="images/appScreen2.png" alt="preview 1" width="300" height="auto"><img src="images/appScreen3.png" alt="preview 1" width="auto" height="500">
 
-
 ---
 
-### [Andorid appliction]()
+### [Andorid appliction](https://github.com/LexLeontiev/karmaauth)👈
 
-### [Server application]()
+### [Server application]()👈
 
 ### Web application build with:
 
-#### Frontend Webpack - boilerplate includes React, MobX & TypeScript
-
+#### Frontend Webpack boilerplate
 #### _Contains_
 
 * [x] [Typescript](https://www.typescriptlang.org/) 2.7
