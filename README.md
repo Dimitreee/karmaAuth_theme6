@@ -14,9 +14,9 @@ associated with the client's personalization._ For example,
 on the site of such a company.
 
 ##### Idea:
-The user photographs the document at registration, and the profile of
-the Karma wallet user is automatically populated from the fields of the identity document,
-without needing to score the fields with his hands.
+User can take photo of document at registration stage, and the profile of
+user's Karma wallet should be auto-generated from the fields of the identity document instance,
+without manual form-fields input.
 And you can also scan the property registration
 certificate / driver's license and other documents and
 fill out the data required for applying for a loan from Karma.
