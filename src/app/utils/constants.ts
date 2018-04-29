@@ -1,52 +1,53 @@
 export const calHeightAttiude = (w) => 1 * w / 175;
 export const calcWidthAttiude = (h) => 1 * h / 123;
 
+
 const EXTRADITION_AGENCY = {
-  x1: calcWidthAttiude(18),
-  y1: calHeightAttiude(15),
-  x4: calcWidthAttiude(115),
-  y4: calHeightAttiude(33),
-  name: "Орган выдавший документ"
+  x1: 0.15,
+  y1: 0.1,
+  x4: 0.93,
+  y4: 0.2,
+  name: 'Орган выдавший документ'
 };
 
 const DATE_OF_ISSUE = {
-  x1: calcWidthAttiude(23),
-  y1: calHeightAttiude(35),
-  x4: calcWidthAttiude(50),
-  y4: calHeightAttiude(40),
-  name: "Дата выдачи"
+  x1: 0.18,
+  y1: 0.2,
+  x4: 0.41,
+  y4: 0.23,
+  name: 'Дата выдачи'
 };
 
 const UNIT_CODE = {
-  x1: calcWidthAttiude(70),
-  y1: calHeightAttiude(30),
-  x4: calcWidthAttiude(115),
-  y4: calHeightAttiude(40),
-  name:"Код подразделения"
+  x1: 0.57,
+  y1: 0.17,
+  x4: 0.93,
+  y4: 0.23,
+  name: 'Код подразделения'
 };
 
 const NAME = {
-  x1: calcWidthAttiude(60),
-  y1: calHeightAttiude(110),
-  x4: calcWidthAttiude(105),
-  y4: calHeightAttiude(122),
-  name: "Имя"
+  x1: 0.48,
+  y1: 0.62,
+  x4: 0.85,
+  y4: 0.69,
+  name: 'Имя'
 };
 
 const LAST_NAME = {
-  x1: calcWidthAttiude(60),
-  y1: calHeightAttiude(100),
-  x4: calcWidthAttiude(105),
-  y4: calHeightAttiude(110),
-  name: "Фамилия"
+  x1: 0.45,
+  y1: 0.54,
+  x4: 0.85,
+  y4: 0.64,
+  name: 'Фамилия'
 };
 
 const MIDDLE_NAME = {
-  x1: calcWidthAttiude(55),
-  y1: calHeightAttiude(120),
-  x4: calcWidthAttiude(105),
-  y4: calHeightAttiude(128),
-  name: "Отчество"
+  x1: 0.45,
+  y1: 0.68,
+  x4: 0.85,
+  y4: 0.72,
+  name: 'Отчество'
 };
 
 export {
