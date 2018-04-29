@@ -31,9 +31,11 @@ fill out the data required for applying for a loan from Karma.
 * [ ] Research on image optimization algorithms to improve the quality of allocated blocks
 * [ ] Add several documents types to autocomplete list
 
-## Screenshots
+## Interaction scheme
+<img src="images/system.png" alt="preview 1" width="auto" height="auto">
 
-<img src="images/appScreen1.png" alt="preview 1" width="300" height="auto"><img src="images/appScreen2.png" alt="preview 1" width="300" height="auto"><img src="images/appScreen3.png" alt="preview 1" width="auto" height="500">
+## Screenshots
+<img src="images/appScreen1.png" alt="preview 1" width="200" height="auto"><img src="images/appScreen2.png" alt="preview 1" width="200" height="auto"><img src="images/appScreen3.png" alt="preview 1" width="200" height="auto">
 
 ---
 
