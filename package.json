@@ -4,6 +4,7 @@
   "private": true,
   "description": "Karma Hackathon project",
   "author": "Dmitry Danev & Alex Leont'ev & Maxim Zemskov",
+  "email": "DanevDima@gmail.com",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --hot --progress --colors --port 8080 --open",
