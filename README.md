@@ -1,14 +1,31 @@
-# Frontend Boilerplate with React, MobX & TypeScript
+#Autocomplete the user profile form from the document's photo
 
-A bare minimum react-mobx-webpack-typescript boilerplate with TodoMVC example.
+   
+#####Assumption: 
+Continuing the theme of the development of Karma as a platform: 
+we want to provide network members with the organization of additional services. 
+So, for example, one of the infrastructural elements of the system is a 
+service or company that performs KYC authorization of a potential 
+borrower or creditor, with the possibility to publish information 
+about a particular purse in the public distributed register of Karma 
+without publishing information about its owner's personal data. 
+*One of the needs of such a service is a simple and quick way to fill out all forms 
+associated with the client's personalization.* For example, 
+on the site of such a company.
+ 
+#####Idea: 
+The user photographs the document at registration, and the profile of 
+the Karma wallet user is automatically populated from the fields of the identity document, 
+without needing to score the fields with his hands. 
+And you can also scan the property registration 
+certificate / driver's license and other documents and 
+fill out the data required for applying for a loan from Karma.
 
-Note that this project does not include **Server-Side Rendering**,  **Testing Frameworks** and other stuffs that makes the package unnecessarily complicated.
+## Andorid appliction
 
-Ideal for creating React apps from the scratch.
-
-See also: [react-redux-typescript-boilerplate](https://github.com/rokoroku/react-redux-typescript-boilerplate)
-
-## Contains
+## Web-app build with:
+### Frontend Boilerplate includes React, MobX & TypeScript
+### _Contains_    
 
 - [x] [Typescript](https://www.typescriptlang.org/) 2.7
 - [x] [React](https://facebook.github.io/react/) 16
@@ -17,9 +34,8 @@ See also: [react-redux-typescript-boilerplate](https://github.com/rokoroku/react
 - [x] [Mobx React](https://github.com/mobxjs/mobx-react)
 - [x] [Mobx React Router](https://github.com/alisd23/mobx-react-router/)
 - [x] [Mobx React Devtools](https://github.com/mobxjs/mobx-react-devtools)
-- [x] [TodoMVC example](http://todomvc.com)
 
-### Build tools
+### _Build tools_
 
 - [x] [Webpack](https://webpack.github.io) 4
   - [x] [Tree Shaking](https://webpack.js.org/guides/tree-shaking/)
@@ -33,30 +49,30 @@ See also: [react-redux-typescript-boilerplate](https://github.com/rokoroku/react
 - [x] [HTML Webpack Plugin](https://github.com/ampedandwired/html-webpack-plugin)
 
 
-## Setup
+### Setup
 
 ```
 $ npm install
 ```
 
-## Running
+### Running
 
 ```
 $ npm start
 ```
 
-## Build
+### Build
 
 ```
 $ npm run build
 ```
 
-## Code Format
+### Code Format
 
 ```
 $ npm run prettier
 ```
 
-# License
+### License
 
 MIT
