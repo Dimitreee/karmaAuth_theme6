@@ -7,10 +7,12 @@ export default function injectGlobalStyles() {
     
     body {
         font-family: sans-serif;
+        background: #242121;
     }
 
     * {
         line-height: 140%;
+        color: #fff;
     }
 
     a:visited, a:link {
