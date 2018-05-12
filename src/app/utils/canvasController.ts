@@ -6,7 +6,9 @@ export class CanvasController {
   canvasDrawer: canvasDrawer;
 
   @observable canvas: Canvasimo;
+  @observable canvasHelper: Canvasimo;
   @observable image: HTMLImageElement;
+  @observable helperImage: HTMLImageElement;
 
   @observable
   sourceImageSize: { width: number; height: number } = { width: 1, height: 1 };
@@ -63,8 +65,9 @@ export class CanvasController {
   }
 
   @action.bound
-  createCanvas(canvas) {
+  createCanvas(canvas, canvasHelper) {
     this.canvas = new Canvasimo(canvas);
+    this.canvasHelper = new Canvasimo(canvasHelper);
     return this;
   }
 
@@ -72,6 +75,7 @@ export class CanvasController {
   setContainerSize(wrapper) {
     const { width, height } = wrapper.getBoundingClientRect();
     this.containerSize = { width: width - 5, height: height - 5 };
+    return this;
   }
 
   @action.bound
@@ -86,6 +90,11 @@ export class CanvasController {
     this.setSourceImageSize({ width, height });
   }
 
+  @action.bound
+  async setHelperImage() {
+    this.helperImage = await fileManager.createImage();
+  }
+
   initDrawer() {
     this.canvas
       .setSize(this.canvasTemplateSize)
@@ -95,6 +104,7 @@ export class CanvasController {
 
     this.canvasDrawer = new canvasDrawer(
       this.canvas,
+      this.canvasHelper,
       this.image,
       this.canvasTemplateWidth,
       this.canvasTemplateHeight
@@ -102,6 +112,6 @@ export class CanvasController {
   }
 
   cropImage = () => {
-    this.canvasDrawer.stopRender()
-  }
+    this.canvasDrawer.stopRender();
+  };
 }

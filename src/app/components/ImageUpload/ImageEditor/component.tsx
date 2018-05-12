@@ -15,16 +15,17 @@ const style = {
 @observer
 export class ImageEditorComponent extends React.Component {
   canvasRef: HTMLCanvasElement;
+  canvasHelperRef: HTMLCanvasElement;
   wrapperRef: HTMLDivElement;
 
   componentDidMount() {
     canvasController
-      .createCanvas(this.canvasRef)
+      .createCanvas(this.canvasRef, this.canvasHelperRef)
       .setContainerSize(this.wrapperRef);
   }
 
   handleCropSubmit = () => {
-    canvasController.cropImage()
+    canvasController.cropImage();
   };
 
   render() {
@@ -43,11 +44,17 @@ export class ImageEditorComponent extends React.Component {
         <EditorWrapper>
           <canvas
             ref={(canvas) => (this.canvasRef = canvas)}
-            height={canvasController.canvasTemplateHeight}
-            width={canvasController.canvasTemplateWidth}
+            height={canvasController.canvasTemplateHeight + 'px'}
+            width={canvasController.canvasTemplateWidth + 'px'}
           />
           <span>{fileManager.blobLoaded}</span>
         </EditorWrapper>
+        <canvas
+          ref={(canvas) => (this.canvasHelperRef = canvas)}
+          width={canvasController.sourceImageSize.width + 'px'}
+          height={canvasController.sourceImageSize.height + 'px'}
+          style={{ display: 'none' }}
+        />
       </div>
     );
   }
