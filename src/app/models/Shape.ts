@@ -13,7 +13,6 @@ export class Shape {
   constructor(vertexArray: Vertex[], canvasImo: Canvasimo) {
     this.canvasImo = canvasImo;
     this.vertexArraySource = vertexArray;
-    console.log(this.vertexArraySource);
   }
 
   initArray = () => {

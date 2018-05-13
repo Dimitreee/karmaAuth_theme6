@@ -5,9 +5,7 @@ import { fileManager } from 'app/utils';
 import { UploadWrapper, FileInput, ImageEditorComponent } from './index';
 
 @observer
-export class ImageUploadComponent extends React.Component<{
-  callback: () => void;
-}> {
+export class ImageUploadComponent extends React.Component {
   render() {
     return (
       <UploadWrapper>

@@ -2,15 +2,8 @@ import * as React from 'react';
 import { fileManager, canvasController } from 'app/utils';
 import { observer } from 'mobx-react/custom';
 import { EditorWrapper } from './index';
-
-import FloatingActionButton from 'material-ui/FloatingActionButton';
-import ImageEdit from 'material-ui/svg-icons/image/edit';
-
-const style = {
-  position: 'absolute',
-  bottom: 10,
-  right: 40
-};
+import { LoadButtonComponent } from 'app/components';
+import { FitToImageButtonComponent } from 'app/components';
 
 @observer
 export class ImageEditorComponent extends React.Component {
@@ -24,8 +17,12 @@ export class ImageEditorComponent extends React.Component {
       .setContainerSize(this.wrapperRef);
   }
 
-  handleCropSubmit = () => {
+  handleCropAction = () => {
     canvasController.cropImage();
+  };
+
+  handleFullScreen = () => {
+    canvasController.toggleFullSizeShape()
   };
 
   render() {
@@ -34,13 +31,8 @@ export class ImageEditorComponent extends React.Component {
         style={{ display: 'flex', flex: '1', position: 'relative' }}
         ref={(wrapper) => (this.wrapperRef = wrapper)}
       >
-        <FloatingActionButton
-          style={style}
-          backgroundColor="rgb(184, 51, 49)"
-          onClick={this.handleCropSubmit}
-        >
-          <ImageEdit />
-        </FloatingActionButton>
+        <FitToImageButtonComponent clickHandler={this.handleFullScreen} />
+        <LoadButtonComponent clickHandler={this.handleCropAction} />
         <EditorWrapper>
           <canvas
             ref={(canvas) => (this.canvasRef = canvas)}

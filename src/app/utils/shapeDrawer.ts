@@ -1,7 +1,9 @@
 import Canvasimo from 'canvasimo';
+// import { helpers, imageRecognizer } from './index';
 import { helpers } from './index';
 
 import { Vertex, Shape } from 'app/models';
+import { observable, runInAction } from 'mobx';
 
 export class canvasDrawer {
   canvasSource: HTMLCanvasElement;
@@ -17,6 +19,9 @@ export class canvasDrawer {
   renderig: boolean = false;
   drawQueue: [any];
   shapesVertexArray: { x: number; y: number }[];
+  shapeBuffer: Vertex[];
+
+  @observable croppedData: string;
 
   constructor(
     canvas: Canvasimo,
@@ -32,9 +37,27 @@ export class canvasDrawer {
     this.sourceImg = sourceImg;
     this.templateWidth = templateWidth;
     this.templateHeight = templateHeight;
-    this.drawQueue = [this.renderImage];
-    this.renderig = true;
 
+    //
+    // setTimeout(() => {
+    //   this.renderImage();
+    //   this.canvasImo.fillCircle(0, 0, 200);
+    //   imageRecognizer.recognizeImage(
+    //     this.canvasImo.getImageData(
+    //       0,
+    //       0,
+    //       this.sourceImg.width,
+    //       this.sourceImg.height
+    //     ),
+    //     this.sourceImg.width,
+    //     this.sourceImg.height,
+    //     this.canvasImo
+    //   );
+    // }, 0);
+
+    this.drawQueue = [this.renderImage];
+
+    this.renderig = true;
     this.draw();
     this.addVertex();
     this.addShape();
@@ -53,6 +76,10 @@ export class canvasDrawer {
     this.clipCroppedShape(helperCtx);
     this.renderHelperImage(helperCtx);
 
+    runInAction(() => {
+      this.croppedData = this.canvasHelperSource.toDataURL();
+    });
+
     // debug
     // const img = new Image();
     // img.src = this.canvasHelperSource.toDataURL();
@@ -62,7 +89,7 @@ export class canvasDrawer {
   clipCroppedShape(helperCtx) {
     const restoredVertexArray = this.normalizeVertexArray();
 
-    helperCtx.fillStyle = '#fff';
+    helperCtx.fillStyle = '#000';
     helperCtx.fillRect(0, 0, this.sourceImg.width, this.sourceImg.height);
     helperCtx.beginPath();
     helperCtx.moveTo(restoredVertexArray[0].x, restoredVertexArray[0].y - 4);
@@ -75,7 +102,6 @@ export class canvasDrawer {
 
     helperCtx.strokeStyle = '#ff0000';
     helperCtx.lineWidth = 10;
-    helperCtx.stroke();
     helperCtx.closePath();
     helperCtx.clip();
   }
@@ -134,6 +160,22 @@ export class canvasDrawer {
     shapesVertexArray.push(this.shapesVertexArray[0]);
     this.canvasImo.setStrokeWidth(1);
     this.canvasImo.strokeClosedPath(shapesVertexArray, '#2C3DD4');
+  };
+
+  toggleShapeSize = (fullSize: boolean) => {
+    if (fullSize) {
+      this.shapeBuffer = [...this.vertexArray];
+      this.vertexArray[0].x = 0;
+      this.vertexArray[0].y = 0;
+      this.vertexArray[1].x = 0;
+      this.vertexArray[1].y = this.templateHeight;
+      this.vertexArray[2].x = this.templateWidth;
+      this.vertexArray[2].y = this.templateHeight;
+      this.vertexArray[3].x = this.templateWidth;
+      this.vertexArray[3].y = 0;
+    } else {
+      this.vertexArray = [...this.shapeBuffer];
+    }
   };
 
   addVertex = () => {

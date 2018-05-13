@@ -117,7 +117,7 @@ module.exports = {
     stats: 'minimal',
     proxy: {
       '/api': {
-        target: 'http://37.143.14.239:8000'
+        target: 'http://mzemskov.com/'
       }
     }
   },

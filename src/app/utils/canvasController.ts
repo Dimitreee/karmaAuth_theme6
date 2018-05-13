@@ -1,6 +1,6 @@
-import Canvasimo from 'canvasimo';
-import { fileManager, canvasDrawer } from './index';
+import { Canvasimo } from 'canvasimo';
 import { action, computed, observable, reaction } from 'mobx';
+import { fileManager, canvasDrawer, apiService } from './index';
 
 export class CanvasController {
   canvasDrawer: canvasDrawer;
@@ -9,6 +9,7 @@ export class CanvasController {
   @observable canvasHelper: Canvasimo;
   @observable image: HTMLImageElement;
   @observable helperImage: HTMLImageElement;
+  @observable fullSizeToggled: boolean = false;
 
   @observable
   sourceImageSize: { width: number; height: number } = { width: 1, height: 1 };
@@ -45,22 +46,14 @@ export class CanvasController {
 
   @computed
   get canvasTemplateWidth() {
-    let width = 0;
-
-    if (this.sourceImageSize.width > this.sourceImageSize.width) {
-      width = this.containerSize.width;
-    } else {
-      width = this.sourceImageSize.width * this.widthToHeightRatio;
-    }
-
-    return width;
+    return this.canvasTemplateHeight * this.widthToHeightRatio;
   }
 
   @computed
   get canvasTemplateSize() {
     return {
-      width: this.canvasTemplateWidth,
-      height: this.canvasTemplateHeight
+      height: this.canvasTemplateHeight,
+      width: this.canvasTemplateWidth
     };
   }
 
@@ -109,9 +102,20 @@ export class CanvasController {
       this.canvasTemplateWidth,
       this.canvasTemplateHeight
     );
+
+    reaction(
+      () => this.canvasDrawer.croppedData,
+      (data) => apiService.recognizeImage(data)
+    );
   }
 
   cropImage = () => {
     this.canvasDrawer.stopRender();
+  };
+
+  @action.bound
+  toggleFullSizeShape = () => {
+    this.fullSizeToggled = !this.fullSizeToggled;
+    this.canvasDrawer.toggleShapeSize(this.fullSizeToggled);
   };
 }

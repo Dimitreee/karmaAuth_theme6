@@ -45,8 +45,13 @@
     "webpack-hot-middleware": "^2.21.1"
   },
   "dependencies": {
+    "@tensorflow/tfjs": "^0.10.3",
+    "base64-arraybuffer": "^0.1.5",
+    "canny-edge-detector": "^1.0.0",
     "canvasimo": "^0.6.5",
     "classnames": "^2.2.5",
+    "has-own": "^1.0.0",
+    "image-js": "^0.21.0",
     "image-promise": "^5.0.1",
     "material-ui": "^0.20.0",
     "mobx": "^3.6.1",
@@ -59,6 +64,8 @@
     "react-router": "^4.2.0",
     "sanitize.css": "^5.0.0",
     "styled-components": "^3.2.6",
-    "tesseract.js": "^1.0.10"
+    "tesseract.js": "^1.0.10",
+    "tfjs-yolo-tiny": "0.0.4",
+    "tracking": "^1.1.3"
   }
 }

@@ -1,9 +1,14 @@
 import * as React from 'react';
 import AppBar from 'material-ui/AppBar';
 
-export const HeaderComponent = () => (
-  <AppBar
-    title="Karma Doc's Reader"
-    style={{ backgroundColor: '#b83331' }}
-  />
-);
+export class HeaderComponent extends React.Component {
+  render() {
+    return (
+      <AppBar
+        title="Karma Doc's Reader"
+        style={{ backgroundColor: '#b83331' }}
+        iconClassNameLeft={undefined}
+      />
+    );
+  }
+}
